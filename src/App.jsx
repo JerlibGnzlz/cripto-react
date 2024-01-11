@@ -29,6 +29,11 @@ column-gap: 2rem;
 }
 `;
 
+const Span = styled.span`
+color: #FB7676;
+
+`;
+
 const App = () => {
   return (
     <Contenedor >
@@ -37,7 +42,7 @@ const App = () => {
         alt="Imagen de cripto"
       />
       <div>
-        <Heading > Cotiza Criptomonedas al instante </Heading>
+        <Heading > Cotiza Criptomonedas al <Span>instante</Span>  </Heading>
 
         <Formulario />
       </div>

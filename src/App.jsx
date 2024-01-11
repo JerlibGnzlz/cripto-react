@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import ImagenCripto from "./img/imagen-criptos.png";
+import Formulario from "./components/Formulario";
 
 const Heading = styled.h1`
 font-family:"Lato",sans-serif;
@@ -9,13 +10,13 @@ font-weight: 700;
 margin-bottom: 50px;
 margin-top: 50px;
 font-size: 40px;
-`
+`;
 const Imagen = styled.img`
 max-width:400px;
 width:80%;
-margin: 100% auto 0 auto ;
+margin: 20%  auto ;
 display: block;
-`
+`;
 
 const Contenedor = styled.div`
 max-width: 900px;
@@ -26,7 +27,7 @@ display: grid;
 grid-template-columns: repeat(2,1fr);
 column-gap: 2rem;
 }
-`
+`;
 
 const App = () => {
   return (
@@ -37,9 +38,11 @@ const App = () => {
       />
       <div>
         <Heading > Cotiza Criptomonedas al instante </Heading>
+
+        <Formulario />
       </div>
     </Contenedor>
-  )
-}
+  );
+};
 
-export default App
+export default App;

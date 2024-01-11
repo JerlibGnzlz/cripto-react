@@ -32,7 +32,9 @@ const Formulario = () => {
 
   useEffect(() => {
     const consultaAPI = async () => {
-      const URL = "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
+
+      const URL = import.meta.env.VITE_API;
+
       const respuestaAPI = await fetch(URL);
       const resultadoAPI = await respuestaAPI.json();
 

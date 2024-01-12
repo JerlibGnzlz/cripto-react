@@ -6,3 +6,4 @@ export const monedas = [
   { id: "EUR", nombre: "EURO" },
   { id: "GBP", nombre: "Libra Esterlina" },
 ];
+

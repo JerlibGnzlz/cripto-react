@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import ImagenCripto from "./img/imagen-criptos.png";
 import Formulario from "./components/Formulario";
 import { useState, useEffect } from "react";
+// import { monedas } from "./components/data/monedas";
+
 
 const Heading = styled.h1`
 font-family:"Lato",sans-serif;
@@ -38,10 +40,23 @@ color: #FB7676;
 const App = () => {
 
   const [monedas, setMonedas] = useState({});
+  const [resultado, setResultado] = useState({});
 
   useEffect(() => {
     if (Object.keys(monedas).length > 0) {
-      console.log(monedas);
+
+      const cotizarCripto = async () => {
+
+        const { moneda, criptomoneda } = monedas;
+        const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
+
+        const respuesta = await fetch(URL);
+        const resultado = await respuesta.json();
+
+
+        setResultado(resultado.DISPLAY[criptomoneda][moneda]);
+      };
+      cotizarCripto();
     }
   }, [monedas]);
 

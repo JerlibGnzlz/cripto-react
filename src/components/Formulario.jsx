@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
@@ -25,7 +26,7 @@ transition: background-color:all .3s ease;
 } 
 `;
 
-const Formulario = () => {
+const Formulario = ({ setMonedas }) => {
 
   const [cripto, setCripto] = useState([]);
   const [error, setError] = useState(false);
@@ -65,6 +66,11 @@ const Formulario = () => {
     }
     setError(false);
 
+    setMonedas({
+      monedas,
+      criptoMonedas
+    });
+
   };
 
 
@@ -81,7 +87,7 @@ const Formulario = () => {
 
         <SelectMonedas />
         <SelectCriptoMonedas />
-        {moneda}
+
         <InputSubmit
           type="submit"
           value="Cotizar"
